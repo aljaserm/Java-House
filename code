@@ -1,0 +1,49 @@
+package house;
+import java.awt.*;
+import javax.swing.*;
+public class window extends JFrame {
+
+	public window () {
+
+	        setTitle("House");
+	        setDefaultCloseOperation(EXIT_ON_CLOSE);
+		       setSize(1000,1000);
+	        	setVisible(true);
+		getContentPane().add(new house());
+
+	}
+
+        public static void main(String[] args) {
+
+        	window frame = new window();
+        	
+
+        } 
+
+} 
+
+class house extends JPanel {
+
+	protected void paintComponent(Graphics g) {
+	        super.paintComponent(g);
+	        g.setColor(Color.blue);
+	        g.fillRect(300, 400, 400, 300);
+	        int x[]={300,500,700};
+	        int y[]={400,200,400};
+	        int vert=3;
+	        Polygon p = new Polygon(x, y, vert);
+	        g.setColor(Color.red);
+	        g.fillPolygon(p);
+	        g.setColor(Color.white);
+	        g.fillRect(350, 450, 75, 75);
+	        g.setColor(Color.white);
+	        g.fillRect(1000-420,450, 75, 75);
+	        g.setColor(new Color(102,51,0));
+	        g.fillRect(445, 500, 120, 200);
+	        g.setColor(Color.BLUE);
+	        g.setFont(new Font("TimesRoman", Font.PLAIN, 18));
+	        g.drawString("Mohammed alJaser - House ", 200, 200);
+	} 
+
+}
+
